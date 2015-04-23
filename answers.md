@@ -27,31 +27,55 @@ Level 4
 Here is the JSON for the graph:
 
 {
+
   "viz": "timeseries",
+
   "requests": [
+
     {
+
       "q": "sum:web.page_views{page:questions}",
+
       "style": {
+
         "palette": "warm"
+
       },
+
       "type": "bars"
+
     },
+
     {
       "q": "sum:web.page_views{page:answers}",
+
       "style": {
+
         "palette": "cool"
+
       },
+
       "type": "bars"
+
     },
+
     {
-      "q": "sum:web.page_views{page:users}",s
+      "q": "sum:web.page_views{page:users}",
+
       "style": {
+
         "palette": "classic"
+
       },
+
       "type": "bars"
+
     }
+
   ],
+
   "events": []
+
 }
 
 
@@ -62,10 +86,16 @@ Here is the code I modified in the agent:
 checks.d/hello.py:
 
 from checks import AgentCheck
+
 from random import randint
+
 class HelloCheck(AgentCheck):
+
     def check(self, instance):
-        self.gauge('test.support.random',randint(0,100000))
+
+        self.gauge('test.support.
+
+        random',randint(0,100000))
 
 
 
